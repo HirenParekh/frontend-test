@@ -1,0 +1,47 @@
+<div class="offering-item" *ngIf="offer">
+  <div class="item-title">
+    {{offer.name}}
+    <div class="item-location">{{offer.location.city}},{{offer.location.canton}}</div>
+  </div>
+  <div class="item-image">
+    <img [src]="'http://'+offer.images[0].url" alt="offer-img">
+  </div>
+  <div class="item-availability">
+    <div class="d-flex justify-content-between">
+      <span class="item-label">Available to Invest</span>
+      <span class="item-value">{{offer.available_to_invest | currency : 'CHF '}}</span>
+    </div>
+    <div class="progress item-progress">
+      <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  </div>
+  <ul class="item-detail-list">
+    <li class="list-item d-flex justify-content-between">
+      <span class="item-label">Purchase Cost</span>
+      <span class="item-value">{{offer.purchase_price | currency: 'CHF '}}</span>
+    </li>
+    <li class="list-item d-flex justify-content-between">
+      <span class="item-label">Min. Investment</span>
+      <span class="item-value">{{offer.minimum_investment | currency: 'CHF '}}</span>
+    </li>
+    <li class="list-item d-flex justify-content-between">
+      <span class="item-label">Investment Type</span>
+      <span class="item-value">{{offer.type}}</span>
+    </li>
+    <li class="list-item d-flex justify-content-between">
+      <span class="item-label">Mortage(LTV)</span>
+      <span class="item-value">{{offer.loan_to_value}}%</span>
+    </li>
+    <li class="list-item d-flex justify-content-between">
+      <span class="item-label">Holding Period</span>
+      <span class="item-value">{{offer.holding_period}}</span>
+    </li>
+    <li class="list-item d-flex justify-content-between">
+      <span class="item-label">Expected Return on Equity</span>
+      <span class="item-value">{{offer.expected_roi}}%</span>
+    </li>
+  </ul>
+  <div class="item-actions">
+    <button class="btn btn-more-details">More Details</button>
+  </div>
+</div>

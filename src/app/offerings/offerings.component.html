@@ -1,0 +1,11 @@
+<div class="offerings-wrapper container-fluid">
+  <app-offering-item-h *ngIf="showMainOffer" [offer]="mainOffer"></app-offering-item-h>
+  <div class="row">
+    <div class="col-lg-4 col-md-6" *ngIf="!showMainOffer">
+      <app-offering-item [offer]="mainOffer"></app-offering-item>
+    </div>
+    <div class="col-lg-4 col-md-6" *ngFor="let offer of offerings">
+      <app-offering-item [offer]="offer"></app-offering-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<aside class="side-menu" [class.active]="toggleMenu">
+  <a class="logo"><img src="../../assets/images/logo.png" alt="site-logo"></a>
+  <ul>
+    <li *ngFor="let menu of menuItems">
+      <a href="javascript:void(0);"
+         [class.active]="activeMenu == menu"
+         (click)="onMenuItemClick(menu)"><i class="fas" [ngClass]="menu.icon"></i>{{menu.label}}</a>
+    </li>
+  </ul>
+</aside>
